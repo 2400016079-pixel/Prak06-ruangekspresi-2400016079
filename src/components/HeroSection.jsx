@@ -1,34 +1,41 @@
-export default function HeroSection() {
+import React from "react";
+// Pastikan path gambar sudah benar sesuai folder assets Anda
+import heroImg from "../assets/mahasiswa.png"; 
+
+export function HeroSection() {
   return (
-    <section className="container mx-auto px-6 py-16 md:py-24">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    // 'pb-32' untuk memberi jarak luas ke section bawahnya
+    <section className="w-full pt-32 pb-32 flex justify-center bg-white overflow-hidden">
+      
+      {/* Container utama untuk menjaga konten tetap simetris di tengah */}
+      <div className="max-w-7xl w-full mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-10">
         
-        {/* Kolom Kiri: Teks */}
-        <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
-            <span className="text-blue-600">RUANG EKSPRESI :</span> Wadah
-            kreatif & Kompetitif Mahasiswa
+        {/* BAGIAN TEKS (KIRI) */}
+        <div className="w-full md:w-[65%] text-left">
+          {/* Judul Utama: Dipastikan sejajar satu baris di layar desktop */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900">
+            <span className="text-[#1D4ED8] whitespace-nowrap">RUANG EKSPRESI :</span>
+            <span className="inline-block md:ml-3">Wadah kreatif & Kompetitif Mahasiswa</span>
           </h1>
-          
-          {/* Badge Warna-warni */}
-          <div className="flex flex-wrap gap-3">
-            <span className="px-4 py-2 bg-yellow-200 text-yellow-800 rounded-full text-sm font-semibold">Ideation</span>
-            <span className="px-4 py-2 bg-green-200 text-green-800 rounded-full text-sm font-semibold">Creation</span>
-            <span className="px-4 py-2 bg-blue-200 text-blue-800 rounded-full text-sm font-semibold">Collaboration</span>
-            <span className="px-4 py-2 bg-pink-200 text-pink-800 rounded-full text-sm font-semibold">Guidance & Support</span>
+
+          {/* Badge Tags: 'mt-12' ditambah agar ada ruang karena deskripsi dihapus */}
+          <div className="flex flex-wrap gap-3 mt-12">
+            <span className="px-5 py-2 bg-[#FDE68A] text-yellow-900 rounded-full text-xs font-bold uppercase shadow-sm">Ideation</span>
+            <span className="px-5 py-2 bg-[#BBF7D0] text-green-900 rounded-full text-xs font-bold uppercase shadow-sm">Creation</span>
+            <span className="px-5 py-2 bg-[#DBEAFE] text-blue-900 rounded-full text-xs font-bold uppercase shadow-sm">Collaboration</span>
+            <span className="px-5 py-2 bg-[#FCE7F3] text-pink-900 rounded-full text-xs font-bold uppercase shadow-sm">Guidance & Support</span>
           </div>
         </div>
 
-        {/* Kolom Kanan: Gambar */}
-        <div className="relative">
-          {/* Ganti src ini dengan gambar asli Anda nanti */}
+        {/* BAGIAN GAMBAR (KANAN) */}
+        {/* 'justify-end' memaksa gambar mepet ke kanan kontainer */}
+        <div className="w-full md:w-[35%] flex justify-end">
           <img 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-            alt="Collaboration Team" 
-            className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
+            src={heroImg} 
+            alt="Hero Mahasiswa" 
+            // rounded-[3rem] agar membulat rapi sesuai desain Figma
+            className="w-full max-w-[500px] h-auto rounded-[3rem] shadow-2xl object-cover" 
           />
-          {/* Hiasan background blob (opsional) */}
-          <div className="absolute -z-10 top-10 right-10 w-full h-full bg-blue-50 rounded-full blur-3xl opacity-50"></div>
         </div>
 
       </div>

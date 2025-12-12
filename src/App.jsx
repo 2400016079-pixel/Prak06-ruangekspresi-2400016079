@@ -1,14 +1,26 @@
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import CardGallery from "./components/CardGallery";
+import React from "react";
+import { Navbar } from "./components/Navbar";
+import { HeroSection } from "./components/HeroSection";
+import { Pillars } from "./components/Pillars";
+import { Schedule } from "./components/Schedule";
+import { Showcase } from "./components/Showcase";
+// 1. IMPORT TESTIMONIALS DI SINI
+import { Testimonials } from "./components/Testimonials"; 
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
-    <div className="font-sans antialiased text-gray-900 bg-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <HeroSection />
-      {/* CardGallery sekarang menampilkan 'Empat Pilar' */}
-      <CardGallery /> 
+      <main>
+        <HeroSection />
+        <Pillars />
+        <Schedule />
+        <Showcase />
+        {/* 2. PASANG DI BAWAH SHOWCASE */}
+        <Testimonials /> 
+      </main>
+      <Footer />
     </div>
   );
 }
